@@ -1,10 +1,8 @@
 name: Build Snapshot
 
+# NOTE: This workflow auto-commits formatting and calls release.yml, which still
+# targets Ortus resources. It no longer runs on push; trigger it manually only.
 on:
-  push:
-    branches:
-      - 'development'
-
   workflow_dispatch:
 
 # Unique group name per workflow-branch/tag combo
