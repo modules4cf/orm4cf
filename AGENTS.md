@@ -29,7 +29,7 @@ The ForgeBox slug and the project name are `orm4cf`, but the module name, folder
 
 ## Engines and tests
 
-- Engines: BoxLang 1 (with and without CFML compat), Lucee 6 and 7 (Hibernate ORM extension), Adobe ColdFusion 2023 and 2025. ColdBox 8.
+- Engines: BoxLang 1 (with and without CFML compat), Lucee 6 and 7 (Lucee's Hibernate ORM extension), Adobe ColdFusion 2023 and 2025. ColdBox 8.
 - The CI matrix is in `.github/workflows/tests.yml` (called by `pr.yml` on every push to a non-main branch). `be` jobs are experimental and may fail.
 - Run locally:
   1. `box run-script startdbs` (MySQL via `docker-compose.yml`), and copy `.env.template` to `.env`.
@@ -43,9 +43,8 @@ The ForgeBox slug and the project name are `orm4cf`, but the module name, folder
 ## Lucee notes
 
 - Lucee is detected in `ORMUtilFactory` (`server.lucee` present and not BoxLang) and uses `LuceeORMUtil`.
-- Server configs install the Hibernate ORM extension via `env.LUCEE_EXTENSIONS` (`D062D72F-F8A2-46F0-8CBC91325B2F067B`), as cborm 4.x did.
+- Lucee CI uses Lucee's own Hibernate ORM extension, pinned to an exact version via `env.LUCEE_EXTENSIONS` in `server-lucee@6.json` and `server-lucee@7.json` (`<extension id>;version=<version>`). Bump the pinned version manually when a new extension release comes out, in both files. Use Lucee's extension, not the older Ortus ORM extension.
 - Lucee 6/7 log through Log4j 2, so `setupHibernateLogging` uses `org.apache.logging.log4j.core.config.Configurator`, not the Log4j 1 classes.
-- Known open issue: `BaseORMServiceTest.testMerge` and `testMergeArray` fail on Lucee 6 and 7 with `LazyInitializationException` when merging a detached entity that has an uninitialized lazy proxy ([LDEV-1992](https://luceeserver.atlassian.net/browse/LDEV-1992)). Merging through the Hibernate session directly fails the same way, so the cause is in the Lucee Hibernate extension. Upstream cborm 4.x skipped these tests on Lucee. We keep them running.
 
 ## CI caveats
 
