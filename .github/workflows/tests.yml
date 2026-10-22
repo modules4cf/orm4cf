@@ -15,14 +15,22 @@ jobs:
       DB_USER: root
       DB_PASSWORD: root
     continue-on-error: ${{ matrix.experimental }}
+    # The test harness derives the module mapping from the folder name,
+    # so the module must be checked out into a folder named after it.
+    defaults:
+      run:
+        working-directory: cborm
     strategy:
       fail-fast: false
       matrix:
-        cfengine: [ "boxlang-cfml@1", "boxlang@1", "adobe@2023", "adobe@2025" ]
+        cfengine: [ "boxlang-cfml@1", "boxlang@1", "lucee@6", "lucee@7", "adobe@2023", "adobe@2025" ]
         coldboxVersion: [ "^8.0.0" ]
         experimental: [ false ]
         # Experimental: ColdBox BE vs All Engines
         include:
+          - coldboxVersion: "be"
+            cfengine: "lucee@7"
+            experimental: true
           - coldboxVersion: "be"
             cfengine: "adobe@2025"
             experimental: true
@@ -41,6 +49,8 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v7
+        with:
+          path: cborm
 
       - name: Setup Java
         uses: actions/setup-java@v6
@@ -101,7 +111,7 @@ jobs:
         if: always()
         with:
           report_paths: |
-            test-harness/tests/results/**/*.xml
+            cborm/test-harness/tests/results/**/*.xml
           check_name: "TestBox Report ${{ matrix.cfengine }}-${{ matrix.coldboxVersion }}"
           include_passed: false
           fail_on_failure: true
@@ -113,7 +123,7 @@ jobs:
         with:
           name: test-results-${{ matrix.cfengine }}-${{ matrix.coldboxVersion }}
           path: |
-            test-harness/tests/results/**/*
+            cborm/test-harness/tests/results/**/*
 
       - name: Show Server Log On Failures
         if: ${{ failure() }}
@@ -126,8 +136,8 @@ jobs:
         with:
           name: Failure Debugging Info - ${{ matrix.cfengine }} - ${{ matrix.coldboxVersion }}
           path: |
-            .engine/**/logs/*
-            .engine/**/WEB-INF/cfusion/logs/*
+            cborm/.engine/**/logs/*
+            cborm/.engine/**/WEB-INF/cfusion/logs/*
 
       - name: Slack Notifications
         # Only on failures and NOT in pull requests
