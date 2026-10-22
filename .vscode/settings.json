@@ -31,6 +31,5 @@
             "username": "root",
             "connectionTimeout": 10000
         }
-    ],
-    "boxlang.debugger.moduleVersion": "1.1.1+2"
+    ]
 }

@@ -47,7 +47,6 @@ If you discover a security vulnerability, please send an email to the developmen
 
 Please make sure your code runs on the following Engines:
 
-- BoxLang 1.+ (Preferred)
 - Adobe ColdFusion 2023+
 
 ## Coding Styles & Formatting

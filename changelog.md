@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Removed
+
+- BoxLang support (orm4cf targets CFML engines: Lucee and Adobe ColdFusion)
+
 ## [5.1.0] - 2026-10-22
 
 ### Added
