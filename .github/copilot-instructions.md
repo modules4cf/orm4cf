@@ -1,5 +1,7 @@
 # CBORM Copilot Instructions
 
+> Project rules (license, versioning, changelog, PR conventions) live in [AGENTS.md](../AGENTS.md). This file describes the code architecture.
+
 CBORM is a ColdBox module that **enhances and abstracts Hibernate ORM** for BoxLang and Adobe ColdFusion engines. It extends Hibernate with service layers, Active Record patterns, fluent criteria queries, dynamic finders, RESTful resources, and AOP transaction management.
 
 ## Core Architecture
