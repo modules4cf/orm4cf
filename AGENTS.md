@@ -29,12 +29,12 @@ The ForgeBox slug and the project name are `orm4cf`, but the module name, folder
 
 ## Engines and tests
 
-- Engines: BoxLang 1 (with and without CFML compat), Lucee 6 and 7 (Lucee's Hibernate ORM extension), Adobe ColdFusion 2023 and 2025. ColdBox 8.
+- Engines: CFML only: Lucee 6 and 7 (Lucee's Hibernate ORM extension), Adobe ColdFusion 2023 and 2025. ColdBox 8. BoxLang is not a target. Some BoxLang code paths inherited from cborm (`BoxLangORMUtil`, `BXEventHandler.bx`, `isBoxLang()` branches) are still in the code but aren't tested.
 - The CI matrix is in `.github/workflows/tests.yml` (called by `pr.yml` on every push to a non-main branch). `be` jobs are experimental and may fail.
 - Run locally:
   1. `box run-script startdbs` (MySQL via `docker-compose.yml`), and copy `.env.template` to `.env`.
   2. `box run-script install:dependencies`
-  3. `box server start serverConfigFile=server-<engine>.json` (for example `server-lucee@7.json`, `server-boxlang-cfml@1.json`)
+  3. `box server start serverConfigFile=server-<engine>.json` (for example `server-lucee@7.json`, `server-adobe@2025.json`)
   4. `box testbox run`, or open `/tests/runner.cfm`.
 - `box run-script format` before committing. CI checks formatting.
 - The test harness derives the module mapping from the folder name. The checkout folder must be named `cborm` (CI checks out into `cborm/`).
