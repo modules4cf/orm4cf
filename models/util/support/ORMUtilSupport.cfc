@@ -1,6 +1,7 @@
 ﻿/**
  * Copyright Since 2005 ColdBox Framework by Luis Majano and Ortus Solutions, Corp
  * www.ortussolutions.com
+ * Modified by the modules4cf contributors, 2026
  * ---
  *
  * An agnostic Engine utility class for working with Hibernate ORM.
@@ -217,6 +218,17 @@ component singleton {
 		var md          = getMetadata( arguments.entity );
 		var annotations = md.keyExists( "annotations" ) ? md.annotations : md;
 		return ( annotations.keyExists( "entityName" ) ? annotations.entityName : listLast( md.name, "." ) );
+	}
+
+	/**
+	 * Merge a detached entity back into the session
+	 *
+	 * @entity The entity to merge
+	 *
+	 * @return The merged entity
+	 */
+	any function merge( required entity ){
+		return entityMerge( arguments.entity );
 	}
 
 	/**

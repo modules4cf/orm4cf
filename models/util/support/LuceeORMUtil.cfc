@@ -18,6 +18,22 @@ component
 {
 
 	/**
+	 * Merge a detached entity back into the session.
+	 * Lucee's entityMerge() initializes lazy proxies of a detached entity and fails
+	 * with a LazyInitializationException (LDEV-1992), so merge through the Hibernate session.
+	 *
+	 * @entity The entity to merge
+	 *
+	 * @return The merged entity
+	 */
+	any function merge( required entity ){
+		return getSession( getEntityDatasource( arguments.entity ) ).merge(
+			getEntityGivenName( arguments.entity ),
+			arguments.entity
+		);
+	}
+
+	/**
 	 * Sets up Hibernate logging levels.
 	 *
 	 * @deprecated Do not use anymore, the engine will provide this

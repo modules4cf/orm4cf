@@ -1,6 +1,7 @@
 /**
  * Copyright Since 2005 ColdBox Framework by Luis Majano and Ortus Solutions, Corp
  * www.ortussolutions.com
+ * Modified by the modules4cf contributors, 2026
  * ---
  * This is a helper ORM service that will help you abstract some complexities
  * when dealing with CF's ORM via Hibernate.  You can use this service in its
@@ -1049,12 +1050,12 @@ component accessors="true" {
 	 */
 	any function merge( required any entity ){
 		if ( !isArray( arguments.entity ) ) {
-			return entityMerge( arguments.entity );
+			return getOrm().merge( arguments.entity );
 		}
 
 		var aReturns = [];
 		for ( var thisObject in arguments.entity ) {
-			arrayAppend( aReturns, entityMerge( thisObject ) );
+			arrayAppend( aReturns, getOrm().merge( thisObject ) );
 		}
 
 		return aReturns;
