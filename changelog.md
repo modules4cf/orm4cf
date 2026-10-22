@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- `LICENSE` file with the full Apache License, Version 2.0 text.
+- `NOTICE` file attributing the upstream cborm project (Apache License 2.0, section 4).
+
 ## [5.1.0] - 2026-10-22
 
 ## [5.0.0] - 2026-07-18
