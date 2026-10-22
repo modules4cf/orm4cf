@@ -1,12 +1,18 @@
-![](logo.png)
+# orm4cf
 
-# Welcome To The ColdBox ORM Module
+**orm4cf** is a community-maintained ORM module for CFML engines, maintained by the [modules4cf](https://github.com/modules4cf) contributors. It enhances the Hibernate-based CFML ORM with service layers, Active Record, fluent criteria queries, dynamic finders and more.
 
-[![cborm CI](https://github.com/coldbox-modules/cborm/actions/workflows/ci.yml/badge.svg)](https://github.com/coldbox-modules/cborm/actions/workflows/ci.yml)
+> **Status:** orm4cf starts from cborm 5.1.0. Lucee support, which cborm 5.x dropped, is planned to be restored.
 
-<img src="https://forgebox.io/api/v1/entry/cborm/badges/version" />
+## Origin and attribution
 
-This module will enhance your experience when working with the ColdFusion (CFML) ORM powered by Hibernate.  It will not only enhance it with dynamic goodness but give you a fluent and human approach to working with Hibernate.  It will finally make working with ORM NOT SUCK!
+orm4cf is a fork of [cborm](https://github.com/coldbox-modules/cborm) version 5.1.0 by Ortus Solutions, Corp. The original cborm documentation is at <https://coldbox-orm.ortusbooks.com/> and still describes most of the API.
+
+Original copyright: *Copyright Since 2005 ColdBox Framework by Luis Majano and Ortus Solutions, Corp*
+
+orm4cf, like cborm, is licensed under the [Apache License, Version 2.0](LICENSE). See [NOTICE](NOTICE) for attribution details.
+
+ColdBox and cborm are trademarks of Ortus Solutions, Corp, used here for attribution only. This project is not affiliated with, sponsored by, or endorsed by Ortus Solutions, Corp.
 
 ## Features
 
@@ -60,26 +66,14 @@ userService
 
 ## LICENSE
 
-Apache License, Version 2.0.
+Apache License, Version 2.0. See [LICENSE](LICENSE) and [NOTICE](NOTICE).
 
 ## IMPORTANT LINKS
 
-**Source & Changelog**
-
-* https://github.com/coldbox-modules/cborm
+* Source: https://github.com/modules4cf/orm4cf
 * [Changelog](changelog.md)
-
-**Documentation**
-
-* https://coldbox-orm.ortusbooks.com/
-
-**Issues**
-
-* https://ortussolutions.atlassian.net/browse/CBORM
-
-**Support**
-
-* https://community.ortussolutions.com/c/box-modules/cborm/25
+* Issues: https://github.com/modules4cf/orm4cf/issues
+* Upstream documentation (cborm): https://coldbox-orm.ortusbooks.com/
 
 ## SYSTEM REQUIREMENTS
 
@@ -90,10 +84,11 @@ Apache License, Version 2.0.
 
 # INSTRUCTIONS
 
-Use CommandBox cli to install:
+Use the CommandBox CLI to install:
 
 ```bash
-box install cborm
+# orm4cf is not published to ForgeBox yet. Until then, install from git:
+box install modules4cf/orm4cf
 ```
 
 Unfortunately, due to the way that ORM is loaded by ColdFusion, if you are using the ORM EventHandler or `ActiveEntity` or any ColdBox Proxies that require ORM, you must create an Application Mapping in the `Application.cfc` like this:
@@ -153,14 +148,16 @@ this.constraints = {
 };
 ```
 
+> **Note:** the module is still installed and mapped as `cborm` (folder, mappings, `@cborm` WireBox IDs). That stays the same for now to keep it compatible.
+
 ## Contributing
 
 All contributions welcome! Feel free to fix a typo, add a feature :rocket:, or add a testbox spec for a newly discovered issue :bug:
 
-If you want to get hacking on CBORM, here's how to start:
+If you want to get hacking on orm4cf, here's how to start:
 
 1. Make sure you have CommandBox installed: https://www.ortussolutions.com/products/commandbox#download
-2. Star, Fork, and Clone down this repo: https://github.com/coldbox-modules/cborm
+2. Star, Fork, and Clone down this repo: https://github.com/modules4cf/orm4cf
 3. Start a MySQL 5+ service or you can use our `docker-compose.yml` file. Just make sure you have Docker installed. `run-script startdbs` or run it manually below.
 
 ```bash
@@ -180,23 +177,3 @@ docker run \
 4. Install the project dependencies with CommandBox `box run-script install:dependencies`
 5. Start a test server - `box start server-boxlang-cfml@1.json`
 6. Hack away! :laptop:
-
-********************************************************************************
-Copyright Since 2005 ColdBox Framework by Luis Majano and Ortus Solutions, Corp
-www.ortussolutions.com
-********************************************************************************
-
-### HONOR GOES TO GOD ABOVE ALL
-
-Because of His grace, this project exists. If you don't like this, then don't read it, its not for you.
-
-> "Therefore being justified by faith, we have peace with God through our Lord Jesus Christ:
-By whom also we have access by faith into this grace wherein we stand, and rejoice in hope of the glory of God.
-And not only so, but we glory in tribulations also: knowing that tribulation worketh patience;
-And patience, experience; and experience, hope:
-And hope maketh not ashamed; because the love of God is shed abroad in our hearts by the
-Holy Ghost which is given unto us. ." Romans 5:5
-
-### THE DAILY BREAD
-
- > "I am the way, and the truth, and the life; no one comes to the Father, but by me (JESUS)" Jn 14:1-12

@@ -1,23 +1,23 @@
 {
-    "name":"ColdBox ORM Extensions",
+    "name":"orm4cf",
     "version":"5.1.0",
     "location":"https://downloads.ortussolutions.com/ortussolutions/coldbox-modules/cborm/@build.version@/cborm-@build.version@.zip",
-    "author":"Ortus Solutions <info@ortussolutions.com",
-    "homepage":"https://github.com/coldbox-modules/cborm",
+    "author":"modules4cf contributors",
+    "homepage":"https://github.com/modules4cf/orm4cf",
     "documentation":"https://coldbox-orm.ortusbooks.com/",
     "repository":{
         "type":"git",
-        "url":"https://github.com/coldbox-modules/cborm"
+        "url":"https://github.com/modules4cf/orm4cf"
     },
-    "bugs":"https://ortussolutions.atlassian.net/browse/CBORM",
+    "bugs":"https://github.com/modules4cf/orm4cf/issues",
     "shortDescription":"Enhances the Hibernate ORM on BoxLang + CFML Engines with tons of utilities.",
-    "slug":"cborm",
+    "slug":"orm4cf",
     "type":"modules",
     "keywords":"hibernate, orm extensions, orm",
     "license":[
         {
-            "type":"Apache2",
-            "url":"http://www.apache.org/licenses/LICENSE-2.0.html"
+            "type":"Apache-2.0",
+            "url":"https://www.apache.org/licenses/LICENSE-2.0"
         }
     ],
     "contributors":[
