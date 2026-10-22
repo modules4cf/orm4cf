@@ -28,6 +28,16 @@ component extends="tests.resources.BaseTest" {
 				);
 			}
 
+			if ( isLucee() && !isBoxLang() ) {
+				it(
+					title = "can get lucee instance",
+					body  = function(){
+						var u = factory.getORMUtil();
+						expect( u ).toBeInstanceOf( "cborm.models.util.support.LuceeORMUtil" );
+					}
+				);
+			}
+
 			if ( isBoxLang() ) {
 				it(
 					title = "can get BoxLang instance",

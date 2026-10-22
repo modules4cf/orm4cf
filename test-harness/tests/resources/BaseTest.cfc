@@ -39,6 +39,10 @@ component
 		return !isAdobe();
 	}
 
+	function notLucee(){
+		return !isLucee() || isBoxLang();
+	}
+
 	function notBoxLang(){
 		return !isBoxLang();
 	}

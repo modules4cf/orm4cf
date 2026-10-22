@@ -79,6 +79,8 @@ Apache License, Version 2.0. See [LICENSE](LICENSE) and [NOTICE](NOTICE).
 
 * Boxlang 1+ (Preferred)
   * Hibernate 5.6.15 via the `bx-orm` module
+* Lucee 6, 7 via the Hibernate ORM extension
+  * Hibernate 5.x
 * ColdFusion 2023, 2025 via their orm module
   * Hibernate 5.x
 

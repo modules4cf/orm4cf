@@ -1,6 +1,7 @@
 ﻿/**
  * Copyright Since 2005 ColdBox Framework by Luis Majano and Ortus Solutions, Corp
  * www.ortussolutions.com
+ * Modified by the modules4cf contributors, 2026
  * ---
  *
  * A simple factory to return the right ORM utility according to CFML engine
@@ -12,6 +13,7 @@ import cborm.models.util.support.*;
 component {
 
 	this.isBoxLang = server.keyExists( "boxlang" );
+	this.isLucee   = server.keyExists( "lucee" ) && !this.isBoxLang;
 	this.isAdobe   = server.keyExists( "coldfusion" ) && server.coldfusion.productname == "ColdFusion Server";
 
 	/**
@@ -22,6 +24,8 @@ component {
 	function getORMUtil(){
 		if ( this.isAdobe ) {
 			return new AdobeORMUtil()
+		} else if ( this.isLucee ) {
+			return new LuceeORMUtil()
 		} else {
 			return new BoxLangORMUtil()
 		}
