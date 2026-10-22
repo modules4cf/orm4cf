@@ -77,6 +77,8 @@ Apache License, Version 2.0. See [LICENSE](LICENSE) and [NOTICE](NOTICE).
 
 ## SYSTEM REQUIREMENTS
 
+* Lucee 6, 7 via Lucee's Hibernate ORM extension (5.6.15.10 or later)
+  * Hibernate 5.x
 * ColdFusion 2023, 2025 via their orm module
   * Hibernate 5.x
 

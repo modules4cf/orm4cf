@@ -1,6 +1,6 @@
 {
     "name":"orm4cf",
-    "version":"5.1.0",
+    "version":"5.2.0",
     "location":"https://downloads.ortussolutions.com/ortussolutions/coldbox-modules/cborm/@build.version@/cborm-@build.version@.zip",
     "author":"modules4cf contributors",
     "homepage":"https://github.com/modules4cf/orm4cf",
@@ -51,8 +51,11 @@
         "format:check":"cfformat check aop,dsl,interceptors,models,test-harness/tests/,ModuleConfig.cfc ./.cfformat.json",
         "install:dependencies":"install --force && cd test-harness && install --force",
         "startdbs":"!docker-compose -f docker-compose.yml up",
+        "start:lucee":"server start serverConfigFile=server-lucee@7.json",
         "start:adobe":"server start serverConfigFile=server-adobe@2025.json",
+        "stop:lucee":"server stop serverConfigFile=server-lucee@7.json",
         "stop:adobe":"server stop serverConfigFile=server-adobe@2025.json",
+        "logs:lucee":"server log serverConfigFile=server-lucee@7.json --follow",
         "logs:adobe":"server log serverConfigFile=server-adobe@2025.json --follow"
     },
     "installPaths":{

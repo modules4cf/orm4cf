@@ -1,12 +1,9 @@
 name: Build a Release
 
+# NOTE: This workflow still targets Ortus resources (S3 buckets, ForgeBox token,
+# Slack, author email) and must be reworked before it is used for orm4cf.
+# It no longer runs automatically on pushes to main; trigger it manually only.
 on:
-  # If you push to master|main this will trigger a stable release
-  push:
-    branches:
-      - master
-      - main
-
   # Reusable workflow : Usually called by a `snapshot` workflow
   workflow_call:
     inputs:
