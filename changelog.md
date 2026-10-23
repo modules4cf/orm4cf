@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- Installing orm4cf failed because ForgeBox refused to download the `cbpaginator` dependency (HTTP 403). `cbpaginator` 2.8.3 is now installed from its GitHub repository (`coldbox-modules/cbpaginator`, pinned to the commit of 2.8.3), since that repository has no release tags.
+- Readme: the `/cborm` application mapping now points to `modules/orm4cf`, and the `joinTo()` examples pass the required alias.
+
+### Changed
+
+- Readme and skill file: install instructions now use the GitHub release tag and describe the release zip.
+
 ## [5.2.0] - 2026-10-23
 
 ### Added

@@ -32,19 +32,25 @@ For the org, naming and general install options see the
   not the older Ortus ORM extension.
 - **Adobe ColdFusion:** the `orm` package (Hibernate 5.x).
 - **ColdBox:** 8 (CI tests `^8.0.0`).
-- **Dependencies** (installed automatically): cbvalidation `^4`, mementifier `^3`, cbstreams `^2`, cbpaginator `^2`.
+- **Dependencies** (installed automatically): cbvalidation `^4`, mementifier `^3`, cbstreams `^2` from ForgeBox,
+  and cbpaginator 2.8.3 from its GitHub repo (`coldbox-modules/cbpaginator`, pinned to a commit).
 
 ## Install
 
-orm4cf is **not on ForgeBox yet** and has **no release of its own yet** (the first planned is `v5.2.0`).
-Install from GitHub:
+orm4cf is released on GitHub (latest: `v5.2.1`) but is **not on ForgeBox yet**. Install a release tag
+from GitHub:
 
 ```bash
-box install modules4cf/orm4cf
+box install modules4cf/orm4cf#v5.2.1
+# or: box install git+https://github.com/modules4cf/orm4cf.git#v5.2.1
 ```
 
-This installs into `modules/orm4cf/`. Don't pin the inherited `v5.1.0` or `v6.0.0-beta.*` tags: they are
-upstream cborm code without the Lucee fixes. Once published, `box install orm4cf` will work.
+Each [GitHub release](https://github.com/modules4cf/orm4cf/releases) also has the module zip attached as
+`orm4cf-<version>.zip`, at `https://github.com/modules4cf/orm4cf/releases/download/v<version>/orm4cf-<version>.zip`.
+
+This installs into `modules/orm4cf/`. Use orm4cf's own release tags (`v5.2.0` and later). Don't pin the
+inherited `v5.1.0` or `v6.0.0-beta.*` tags: they are upstream cborm code without the Lucee fixes.
+Once published, `box install orm4cf` will work.
 
 Enable ORM in `Application.cfc` as usual, and add the `/cborm` mapping (needed because the ORM starts
 before ColdBox, so module mappings don't exist yet when entities or the event handler load):
@@ -179,7 +185,7 @@ Handlers can extend `cborm.models.resources.BaseHandler` for CRUD resources
 
 ## Migrating from cborm
 
-1. Replace the dependency: remove `cborm`, run `box install modules4cf/orm4cf` (or `orm4cf` once on ForgeBox).
+1. Replace the dependency: remove `cborm`, run `box install modules4cf/orm4cf#v5.2.1` (or `orm4cf` once on ForgeBox).
 2. Point the `/cborm` application mapping at the new folder: `modules/orm4cf` instead of `modules/cborm`.
 3. Calls that use the ColdBox module **name** (`getModuleSettings( "cborm" )`, `getModuleConfig( "cborm" )`,
    another module's `this.dependencies = [ "cborm" ]`) must use `orm4cf`, because the module is

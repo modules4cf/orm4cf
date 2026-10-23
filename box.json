@@ -1,6 +1,6 @@
 {
     "name":"orm4cf",
-    "version":"5.3.0",
+    "version":"5.2.1",
     "location":"https://github.com/modules4cf/orm4cf/releases/download/v@build.version@/orm4cf-@build.version@.zip",
     "author":"modules4cf contributors",
     "homepage":"https://github.com/modules4cf/orm4cf",
@@ -29,7 +29,7 @@
         "cbvalidation":"^4.0.0",
         "mementifier":"^3.0.0",
         "cbstreams":"^2.0.0",
-        "cbpaginator":"^2.0.0"
+        "cbpaginator":"git+https://github.com/coldbox-modules/cbpaginator.git#803cf37e301c1981775aeb4c1f48aafb6d0e97f3"
     },
     "devDependencies":{
         "commandbox-cfformat":"*",
