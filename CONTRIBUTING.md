@@ -1,15 +1,17 @@
-# cborm Contributing Guide
+# orm4cf Contributing Guide
 
-Hola amigo! I'm really excited that you are interested in contributing to our project. Before submitting your contribution, please make sure to take a moment and read through the following guidelines:
+Thank you for your interest in contributing to orm4cf! orm4cf is maintained by the [modules4cf](https://github.com/modules4cf) community. It is a fork of [cborm](https://github.com/coldbox-modules/cborm) by Ortus Solutions, Corp, licensed under the Apache License, Version 2.0. Before submitting your contribution, please take a moment to read the following guidelines:
 
 - [Code Of Conduct](#code-of-conduct)
 - [Bug Reporting](#bug-reporting)
+- [Pull Requests](#pull-requests)
 - [Support Questions](#support-questions)
 - [Security Vulnerabilities](#security-vulnerabilities)
 - [Language Compatibility](#language-compatibility)
 - [Coding Styles \& Formatting](#coding-styles--formatting)
 - [CFC Docs With DocBox](#cfc-docs-with-docbox)
-- [Financial Contributions](#financial-contributions)
+- [License](#license)
+- [Supporting the Original Authors](#supporting-the-original-authors)
 - [Contributors](#contributors)
 
 ## Code Of Conduct
@@ -25,30 +27,38 @@ This project is open source, and as such, the maintainers give their free time t
 
 ## Bug Reporting
 
-Each of the main standalone frameworks in ColdBox has its separate locations for submitting bug reports.  Please make sure also that if you submit a pull request, you link it to the appropriate issue.
+Please report bugs in the orm4cf issue tracker: <https://github.com/modules4cf/orm4cf/issues>
 
-https://github.com/coldbox-modules/cborm
+If you file a bug report, your issue should contain a title, a clear description of the issue, the CFML engine and version you use (for example Lucee 7 or Adobe ColdFusion 2025), the orm4cf version, a way to replicate the issue, and any support files that we might need to replicate your issue. The goal of a bug report is to make it easy for yourself - and others - to replicate the bug and develop a fix for it.
 
-If you file a bug report, your issue should contain a title, a clear description of the issue, a way to replicate the issue, and any support files that we might need to replicate your issue. The goal of a bug report is to make it easy for yourself - and others - to replicate the bug and develop a fix for it.  All issues that do not contain a way to replicate will not be addressed.
+## Pull Requests
+
+Pull requests are welcome at <https://github.com/modules4cf/orm4cf/pulls>.
+
+1. Fork the repository and create a branch from `main`.
+2. Keep **one concern per pull request**. Small, focused pull requests are easier to review and merge.
+3. Add or update tests for your change. Tests must never be skipped or weakened to get a green build.
+4. Make sure the CI matrix passes on all supported engines.
+5. Link the related issue in the pull request description.
 
 ## Support Questions
 
-If you have any questions on usage, professional support or just ideas to bounce off the maintainers, please do not create an issue.  Leverage our support channels first.
+If you have questions on usage or ideas to bounce off the maintainers, you are welcome to use the community channels:
 
-- Ortus Community Discourse: https://community.ortussolutions.com/
-- Box Slack Team           : https://boxteam.ortussolutions.com/
-- Professional Support     : https://www.ortussolutions.com/services/support
+- Lucee Dev Forum: <https://dev.lucee.org>
+- CFML Slack     : <https://cfml.slack.com>
+- GitHub issues  : <https://github.com/modules4cf/orm4cf/issues>
 
 ## Security Vulnerabilities
 
-If you discover a security vulnerability, please send an email to the development team at [security@ortussolutions.com](mailto:security@ortussolutions.com?subject=security) and make sure you report it to the `#security` channel in our Box Team Slack Channel. All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability, please do not open a public issue. Contact one of the [modules4cf maintainers](https://github.com/orgs/modules4cf/people) privately first (for example via a direct message on the CFML Slack), so the issue can be fixed before it is disclosed.
 
 ## Language Compatibility
 
-Please make sure your code runs on the following Engines:
+Please make sure your code runs on the following engines, which are covered by CI:
 
-- Lucee 6+
-- Adobe ColdFusion 2023+
+- Lucee 6 and 7
+- Adobe ColdFusion 2023 and 2025
 
 ## Coding Styles & Formatting
 
@@ -59,30 +69,33 @@ Make sure all code is formatted
 box run-script format
 
 # Start a watcher, type away, save and auto-format for you
-box run-script format: watch
+box run-script format:watch
 ```
 
-We recommend that anytime you hack on the core you start the formatter watcher (`box run-script format:watch`). This will monitor your changes and auto-format your code for you.
+We recommend that anytime you hack on the code you start the formatter watcher (`box run-script format:watch`). This will monitor your changes and auto-format your code for you.
 
-You can also see the Ortus Coding Standards you must follow here: https://github.com/Ortus-Solutions/coding-standards.
+The formatting rules are inherited from the original project and follow the Ortus Coding Standards: <https://github.com/Ortus-Solutions/coding-standards>.
 
 ## CFC Docs With DocBox
 
-All CFCs are self-documenting and we leverage [DocBox](https://docbox.ortusbooks.com/) to document the entire software.  All functions must be properly documented using the DocBox syntax: https://docbox.ortusbooks.com/getting-started/annotating-your-code
+All CFCs are self-documenting and we leverage [DocBox](https://docbox.ortusbooks.com/) to document the entire software.  All functions must be properly documented using the DocBox syntax: <https://docbox.ortusbooks.com/getting-started/annotating-your-code>
 
-## Financial Contributions
+## License
 
-You can support ColdBox and all of our Open Source initiatives at Ortus Solutions by becoming a patreon.  You can also get lots of goodies and services depending on the level of contributions.
+orm4cf is licensed under the [Apache License, Version 2.0](LICENSE). By contributing, you agree that your contributions are licensed under the same license. The original copyright and attribution notices in [NOTICE](NOTICE) must be kept.
 
-- [Become a backer or sponsor on Patreon](https://www.patreon.com/ortussolutions)
-- [One-time donations via PayPal](https://www.paypal.com/paypalme/ortussolutions)
+## Supporting the Original Authors
+
+orm4cf builds on cborm, created by Ortus Solutions, Corp and its contributors. If orm4cf is useful to you, consider supporting their open source work as well:
+
+- [Ortus Solutions on Patreon](https://www.patreon.com/ortussolutions)
 
 ## Contributors
 
-Thank you to all the people who have already contributed to ColdBox! We: heart: : heart: : heart: love you!
+Thank you to everyone who has contributed to orm4cf and to the original cborm project!
 
-<a   href = "https://github.com/coldbox-modules/cborm/graphs/contributors">
-<img src  = "https://contrib.rocks/image?repo=coldbox-modules/cborm"/>
+<a href="https://github.com/modules4cf/orm4cf/graphs/contributors">
+<img src="https://contrib.rocks/image?repo=modules4cf/orm4cf"/>
 </a>
 
 Made with [contributors-img](https://contrib.rocks)

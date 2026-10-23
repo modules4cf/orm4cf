@@ -2,7 +2,7 @@
 
 **orm4cf** is a community-maintained ORM module for CFML engines, maintained by the [modules4cf](https://github.com/modules4cf) contributors. It enhances the Hibernate-based CFML ORM with service layers, Active Record, fluent criteria queries, dynamic finders and more.
 
-> **Status:** orm4cf starts from cborm 5.1.0. Lucee support, which cborm 5.x dropped, is planned to be restored.
+> **Status:** orm4cf is based on cborm 5.1.0. Lucee support, which cborm 5.x dropped, has been restored. The test suite runs in CI on Lucee 6, Lucee 7, Adobe ColdFusion 2023 and Adobe ColdFusion 2025.
 
 ## Origin and attribution
 
