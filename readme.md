@@ -1,3 +1,5 @@
+<p align="center"><img src="logo.png" alt="orm4cf" width="220"></p>
+
 # orm4cf
 
 **orm4cf** is a community-maintained ORM module for CFML engines, maintained by the [modules4cf](https://github.com/modules4cf) contributors. It enhances the Hibernate-based CFML ORM with service layers, Active Record, fluent criteria queries, dynamic finders and more.
