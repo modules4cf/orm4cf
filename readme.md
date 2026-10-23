@@ -77,6 +77,15 @@ Apache License, Version 2.0. See [LICENSE](LICENSE) and [NOTICE](NOTICE).
 * Issues: https://github.com/modules4cf/orm4cf/issues
 * Upstream documentation (cborm): https://coldbox-orm.ortusbooks.com/
 
+## AI ASSISTANTS AND SKILLS
+
+Using an AI coding assistant? orm4cf ships a **skill file** in the open [Agent Skills](https://agentskills.io) format: [`skills/orm4cf/SKILL.md`](skills/orm4cf/SKILL.md). It gives your assistant the correct install steps, settings, APIs and cborm migration notes, so it doesn't have to guess.
+
+* orm4cf skill (raw): `https://raw.githubusercontent.com/modules4cf/orm4cf/main/skills/orm4cf/SKILL.md`
+* modules4cf org skill (raw): `https://raw.githubusercontent.com/modules4cf/.github/main/skills/modules4cf/SKILL.md`
+
+Point your assistant at the raw URL, or copy the `skills/orm4cf/` folder into your project's or your assistant's skills folder.
+
 ## SYSTEM REQUIREMENTS
 
 * Lucee 6, 7 via Lucee's Hibernate ORM extension (5.6.15.10 or later)
