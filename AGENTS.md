@@ -48,7 +48,7 @@ The ForgeBox slug and the project name are `orm4cf`, but the module name, folder
 
 ## CI caveats
 
-- `release.yml` and `snapshot.yml` still target Ortus resources (S3 buckets `downloads.ortussolutions.com` / `apidocs.ortussolutions.com`, Ortus author email) and need `FORGEBOX_TOKEN`, AWS and Slack secrets that are not configured. Don't trigger releases until they are migrated.
+- `release.yml` is triggered manually from `main` only. It tags `v<version>`, creates the GitHub release with the module zip (which `box.json` `location` points to), publishes to ForgeBox when the `FORGEBOX_TOKEN` repository secret is set (otherwise it skips that step with a warning), and then pushes the next minor version bump to `main`. It refuses to run if the tag already exists. `snapshot.yml` still auto-commits formatting; run it manually only.
 - The JUnit report step can't create check runs on fork PRs ("Resource not accessible by integration"). That message alone is not a test failure.
 
 ## Pull requests

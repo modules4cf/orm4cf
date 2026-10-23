@@ -13,6 +13,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `LICENSE` file with the full Apache License, Version 2.0 text.
 - `NOTICE` file attributing the upstream cborm project (Apache License 2.0, section 4).
 
+### Changed
+
+- Release workflow now publishes to GitHub Releases and ForgeBox for modules4cf instead of Ortus resources, and never overwrites existing tags.
+
 ### Removed
 
 - BoxLang support (orm4cf targets CFML engines: Lucee and Adobe ColdFusion)
