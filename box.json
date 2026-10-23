@@ -1,6 +1,6 @@
 {
     "name":"orm4cf",
-    "version":"5.2.1",
+    "version":"5.3.0",
     "location":"https://github.com/modules4cf/orm4cf/releases/download/v@build.version@/orm4cf-@build.version@.zip",
     "author":"modules4cf contributors",
     "homepage":"https://github.com/modules4cf/orm4cf",
