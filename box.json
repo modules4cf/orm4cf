@@ -1,7 +1,7 @@
 {
     "name":"orm4cf",
     "version":"5.2.0",
-    "location":"https://downloads.ortussolutions.com/ortussolutions/coldbox-modules/cborm/@build.version@/cborm-@build.version@.zip",
+    "location":"https://github.com/modules4cf/orm4cf/releases/download/v@build.version@/orm4cf-@build.version@.zip",
     "author":"modules4cf contributors",
     "homepage":"https://github.com/modules4cf/orm4cf",
     "documentation":"https://coldbox-orm.ortusbooks.com/",
