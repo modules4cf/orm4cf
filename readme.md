@@ -4,6 +4,8 @@
 
 **orm4cf** is a community-maintained ORM module for CFML engines, maintained by the [modules4cf](https://github.com/modules4cf) contributors. It enhances the Hibernate-based CFML ORM with service layers, Active Record, fluent criteria queries, dynamic finders and more.
 
+modules4cf is an independent, engine-neutral CFML community project. It is not a Lucee project and lives outside the Lucee organization.
+
 > **Status:** orm4cf is based on cborm 5.1.0. Lucee support, which cborm 5.x dropped, has been restored. The test suite runs in CI on Lucee 6, Lucee 7, Adobe ColdFusion 2023 and Adobe ColdFusion 2025.
 
 ## Origin and attribution
@@ -49,8 +51,8 @@ userService
 userService
 	.newCriteria()
 	.isTrue( "isActive" )
-	.joinTo( "role" )
-		.eq( "name", "admin" )
+	.joinTo( "role", "r" )
+		.eq( "r.name", "admin" )
 	.asStream()
 	.list();
 
@@ -58,8 +60,8 @@ userService
 	.newCriteria()
 	.withProjections( property="id,fname:firstName,lname:lastName,age" )
 	.isTrue( "isActive" )
-	.joinTo( "role" )
-		.eq( "name", "admin" )
+	.joinTo( "role", "r" )
+		.eq( "r.name", "admin" )
 	.asStruct()
 	.list();
 ```
@@ -98,14 +100,18 @@ Point your assistant at the raw URL, or copy the `skills/orm4cf/` folder into yo
 Use the CommandBox CLI to install:
 
 ```bash
-# orm4cf is not published to ForgeBox yet. Until then, install from git:
-box install modules4cf/orm4cf
+# orm4cf is not published to ForgeBox yet. Until then, install a release from GitHub:
+box install modules4cf/orm4cf#v5.2.1
 ```
+
+Release zips are also attached to each [GitHub release](https://github.com/modules4cf/orm4cf/releases) as `orm4cf-<version>.zip`.
+
+This installs the module into `modules/orm4cf/`.
 
 Unfortunately, due to the way that ORM is loaded by ColdFusion, if you are using the ORM EventHandler or `ActiveEntity` or any ColdBox Proxies that require ORM, you must create an Application Mapping in the `Application.cfc` like this:
 
 ```js
-this.mappings[ "/cborm" ] = COLDBOX_APP_ROOT_PATH & "modules/cborm";
+this.mappings[ "/cborm" ] = COLDBOX_APP_ROOT_PATH & "modules/orm4cf";
 ```
 
 This is due to the fact that the ORM event listener starts before ColdBox, so no dynamic mappings exist yet.  **Important**: Make sure you ALWAYS lazy load dependencies in your event handlers to avoid chicken and the egg issues.
@@ -159,7 +165,7 @@ this.constraints = {
 };
 ```
 
-> **Note:** the module is still installed and mapped as `cborm` (folder, mappings, `@cborm` WireBox IDs). That stays the same for now to keep it compatible.
+> **Note:** the module installs into `modules/orm4cf/` and is registered in ColdBox as `orm4cf` (for example `getModuleSettings( "orm4cf" )`). For compatibility the `/cborm` mapping, `cborm.models.*` paths, `@cborm` WireBox IDs and `moduleSettings.cborm` stay the same.
 
 ## Contributing
 
