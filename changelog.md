@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [5.2.1] - 2026-10-23
+
 ### Fixed
 
 - Installing orm4cf failed because ForgeBox refused to download the `cbpaginator` dependency (HTTP 403). `cbpaginator` 2.8.3 is now installed from its GitHub repository (`coldbox-modules/cbpaginator`, pinned to the commit of 2.8.3), since that repository has no release tags.
@@ -685,7 +687,8 @@ Remember this entity extends the Virtual Service, so we get all the features abo
 - Create first module version
 
 [4.4.0]: https://github.com/coldbox-modules/cborm/compare/13af593fa8a7bf2c4396e9be9d0dd0bb6899e935...v4.4.0
-[unreleased]: https://github.com/modules4cf/orm4cf/compare/v5.2.0...HEAD
+[unreleased]: https://github.com/modules4cf/orm4cf/compare/v5.2.1...HEAD
+[5.2.1]: https://github.com/modules4cf/orm4cf/compare/HEAD...v5.2.1
 [5.2.0]: https://github.com/modules4cf/orm4cf/compare/HEAD...v5.2.0
 [5.1.0]: https://github.com/modules4cf/orm4cf/compare/HEAD...v5.1.0
 [5.0.0]: https://github.com/coldbox-modules/cborm/compare/HEAD...v5.0.0
